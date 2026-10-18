@@ -1,0 +1,20 @@
+{
+  "settings": {
+    "base": "RWF",
+    "rates": { "EUR": 1400, "GBP": 1600 },
+    "cap": 600000,
+    "categories": ["Food", "Books", "Transport", "Entertainment", "Fees", "Other Expenses"]
+  },
+  "records": [
+    {"id":"txn_0001","description":"Lunch at cafeteria","amount":8000,"category":"Food","date":"2026-10-14","createdAt":"2026-10-14T10:00:00.000Z","updatedAt":"2026-10-14T10:00:00.000Z"},
+    {"id":"txn_0002","description":"Ikigai Book","amount":20000,"category":"Books","date":"2026-10-13","createdAt":"2026-10-13T09:00:00.000Z","updatedAt":"2026-10-13T09:00:00.000Z"},
+    {"id":"txn_0003","description":"Bus pass","amount":800,"category":"Transport","date":"2026-10-12","createdAt":"2026-10-12T08:00:00.000Z","updatedAt":"2026-10-12T08:00:00.000Z"},
+    {"id":"txn_0004","description":"Coffee with my friends","amount":4500,"category":"Entertainment","date":"2026-10-11","createdAt":"2026-10-11T14:00:00.000Z","updatedAt":"2026-10-11T14:00:00.000Z"},
+    {"id":"txn_0005","description":"Tuition Fees","amount":500000,"category":"Fees","date":"2026-10-10","createdAt":"2026-10-10T12:00:00.000Z","updatedAt":"2026-10-10T12:00:00.000Z"},
+    {"id":"txn_0006","description":"Snack","amount":1000,"category":"Food","date":"2026-10-09","createdAt":"2026-10-09T16:00:00.000Z","updatedAt":"2026-10-09T16:00:00.000Z"},
+    {"id":"txn_0007","description":"Tea Study Session","amount":4000,"category":"Food","date":"2026-10-08","createdAt":"2026-10-08T11:00:00.000Z","updatedAt":"2026-10-08T11:00:00.000Z"},
+    {"id":"txn_0008","description":"Concert Ticket","amount":25000,"category":"Entertainment","date":"2026-12-08","createdAt":"2026-12-08T10:00:00.000Z","updatedAt":"2026-12-08T10:00:00.000Z"},
+    {"id":"txn_0009","description":"Printing assignment","amount":3000,"category":"Other Expenses","date":"2026-10-14","createdAt":"2026-10-14T13:00:00.000Z","updatedAt":"2026-10-14T13:00:00.000Z"},
+    {"id":"txn_0010","description":"Taxi to campus","amount":6750,"category":"Transport","date":"2026-10-12","createdAt":"2026-10-12T09:00:00.000Z","updatedAt":"2026-10-12T09:00:00.000Z"}
+  ]
+}

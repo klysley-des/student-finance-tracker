@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Argenttracker tests</title>
+    </head>
+    <body>
+        <h1>Argenttracker</h1>
+        <pre id="out">Running...</pre> 
+        <script type="module">
+            import { checkRecord, rules } from "./scripts/validators.js";
+            import { compile, highlight } from "./scripts/search.js";
+
+            const does = ["Food", "Books", "Transport", "Entertainment", "Fees", "Other expenses"];
+            const good = {description: "Lunch", amount:"12000", date: "2026-10-14", category: "Food" };
+            const lines = [];
+            const check = (name, pass) => lines.push(`${pass ? "PASS" : "FAIL"} ${name}`);
+
+            check("good record", typeof checkRecord(good, does) === "object");
+            check("reject 012", typeof checkRecord({...good, amount: "012" }, does) === "string");
+            check("rejects edge spaces", typeof checkRecord({...good, description: " Lunch" }, does) === "string");
+            check("reject duplicate word", typeof checkRecord({ ...good, description: "coffee coffee"  }, does) === "string");
+            check("date rule", rules.date.test("2026-10-14") && !rules.date.test("2026-13-01"));
+            check("categeory rule", rules.category.test("Bus Pass") && !rules.category.test("Food2"));
+            check("bad search is caught", compile("[", true).re === null);
+            check("highlight uses mark", highlight("tea time", compile("tea", true).re).includes("<mark>tea</mark>"));
+
+            document.getEl
+        </script>
+    </body>
+</html>

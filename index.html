@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Argenttracker</title>
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+        <a class="skip" href="#main">Skip to the actual content</a>
+        <header>
+            <p class="logo">Argenttracker</p>
+            <button id="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+            <nav id="nav" aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#records">Records</a>
+                <a href="#form">Add</a>
+                <a href="#settings">Settings</a>
+            </nav>
+        </header>
+
+        <main id="main">
+            <section id ="about">
+                <h1>About</h1>
+                <p>Argenttracker is a student finance tracker that helps them to keep records of their expenses, track their spendings and also manages them. It saves their on the user's device and regular expressions are used by it to validate transactions made by the user.</p>
+                <p>Contact: <a href="mailto:k.lysley@alustudent.com">k.lysley@alustudent.com</a> . <a href="https://github.com/klysley-des">Github</a></p>
+                </section>
+                
+                <section id="dashboard" aria-labelledby="dash-title">
+                    <h2 id="dash-title">Dashboard</h2>
+                    <div class="stats">
+                        <article><h3>Records</h3><p id="count">0</p></article>
+                        <article><h3>Total</h3><p id="sum">0</p></article>
+                        <article><h3>Top Category</h3><p id="top">-</p></article>
+                    </div>
+                    <p id="fx"></p>
+                    <h3>Last 7 days</h3>
+                    <div id="chart" class="chart" role="img" aria-label="Spending for the past seven days"></div>
+                    <div class="meter" aria-hidden="true"><span id="fill"></span></div>
+                    <p id="capmsg" aria-live="polite" aria-atomic="true"></p>
+                </section>
+
+                <section id="records" aria-labelledby="rec-title">
+                    <h2 id="rec-title">Records</h2>
+                    <label for="q">Regex search</label>
+                    <input id="q" type="search" placeholder="coffee|tea or \.\d{2}">
+                    <label><input id="ci" type="checkbox" checked> Ignore Case</label>
+                    <p id="qerr" role="status"></p>
+                    <p>
+                        Sort:
+                        <button type="button" data-sort="date">Date</button>
+                        <button type="button" data-sort="description">Description</button>
+                        <button type="button" data-sort="amount">Amount</button>
+                    </p>
+                    <table>
+                        <caption class="sr">Transaction Records</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rows"></tbody>
+                    </table>
+                </section>
+
+                <section id="form" aria-labelledby="form-title">
+                    <h2 id="form-title">Add a transaction</h2>
+                    <form id="txn" novalidate>
+                        <input id="edit-id" type="hidden">
+                        <label for="description">Description</label>
+                        <input id="description" required maxlength="90">
+                        <label for="amount">Amount</label> 
+                        <input id="amount" inputmode="decimal" required placeholder="12.50">
+                        <label for="date">Date</label>
+                        <input id="date" type="date" required>
+                        <label for="category">Category</label>
+                        <select id="category" required></select>
+                        <p id="status" role="status"></p>
+                        <button id="save" type="submit">Save</button>
+                        <button id="cancel" type="button">Clear</button>
+    
+
+                    </form>
+                </section>
+
+                <section id="settings" aria-labelledby="set-title">
+                    <h2 id="set-title">Settings</h2>
+                    <form id="prefs">
+                        <label for="base">Base currency</label>
+                        <select id="base">
+                            <option>RWF</option>
+                            <option>USD</option>
+                            <option>EUR</option>
+                        </select>
+                        <label for="eur">1 USD equals this many RWF</label>
+                        <input id="eur" inputmode="decimal">
+                        <label for="gbp">1 EUR equals this many RWF</label>
+                        <input id="gbp" inputmode="decimal">
+                        <label for="cap">Monthly cap</label>
+                        <input id="cap" inputmode="decimal">
+                        <label for="cats">Categories(one per line)</label>
+                        <textarea id="cats" rows="4"></textarea>
+                        <button type="submit">Save Settings</button>
+                    </form>
+                    <p>
+                        <button id="export" type="button">Export JSON</button>
+                        <label for="import">Import JSON <input id="import" type="file" accept=".json,application/json"></label>
+                        <button id="seed" type="button">Load Sample Data</button>
+                    </p>
+                    <p id="prefmsg" role="status"></p>
+                </section>
+            </main>
+            <footer><p>Argenttracker . student finance tracker</p></footer>
+            <script type="module" src="scripts/app.js"></script>
+        </body>
+        </html>
+
+
+
+            
+
