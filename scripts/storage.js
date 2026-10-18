@@ -6,7 +6,7 @@ const SETTINGS_KEY = "argenttracker:settings";
 export function defaultSettings() {
   return {
     base: "RWF",
-    rates: { EUR: 1400, GBP: 1600 },
+    rates: { EUR: 1660, GBP: 1900 },
     cap: 600000,
     categories: ["Food", "Books", "Transport", "Entertainment", "Fees", "Other Expenses" ]
   };
