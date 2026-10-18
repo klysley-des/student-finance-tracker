@@ -19,7 +19,7 @@ Github: https;//github.com/klysley-des
 | Use | Pattern | Example |
 | --- | --- | --- |
 | Description | `/^\S(?:.*\S)?$/` | `Lunch` passes, ` Lunch` fails |
-| Amount | `/^(0\|[1-9]\d*)(\.\d{1,2})?$/` | `12.50` passes, `012` fails |
+| Amount | `/^(0\|[1-9]\d*)(\.\d{1,2})?$/` | `12000.50` passes, `012` fails |
 | Date | `/^\d{4}-(0[1-9]\|1[0-2])-(0[1-9]\|[12]\d\|3[01])$/` | `2026-10-14` |
 | Category | `/^[A-Za-z]+(?:[ -][A-Za-z]+)*$/` | `Bus Pass` |
 | Duplicate word | `/\b(\w+)\s+\1\b/i` | `coffee coffee` fails |
@@ -47,6 +47,6 @@ Github: https;//github.com/klysley-des
 3. Click load Sample Data in Settings.
 4. Open tests.html the same way. Every line should say PASS.
 
-##Demo
+## Demo
 
-This is my demo video link: 
+This is my demo video link: https://drive.google.com/file/d/1p4R65XJa-pWUUvZDWLi3KCJlxdCuN5Rp/view?usp=sharing
